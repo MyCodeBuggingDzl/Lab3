@@ -15,6 +15,7 @@ package org.example;
 
 
     public Employee(String name, double salary) {
+        System.out.println("Employee Constructor");
         this.name = name;
         this.salary = salary;
     }
@@ -45,6 +46,8 @@ package org.example;
 
      public static void main(String[] args) {
          Manager m = new Manager("John", 8000, 5000);
+         Manager m1 = new Manager("Amanda", 80000, 5000);
+
 
          double mAllowance = m.managementAllowance;
          System.out.println(mAllowance);
@@ -59,18 +62,12 @@ package org.example;
          System.out.println(salary);
 
 
-         /*
-         1. m.getName() will allow us to get the name
-         2. m.getSalary will get the salary
-         3. m.getManagementAllowance() will get the management allowance
-         4. m. calculateBonus will allow us to calc the bonus.
-         (All in the Manager class)
-          */
      }
 
 
     public Manager(String name, double salary, double managementAllowance){
-        super(name, salary);
+         super(name, salary);
+         System.out.println("Manager Constructor");
         this.managementAllowance = managementAllowance;
     }
 
@@ -84,3 +81,15 @@ package org.example;
         return getSalary() * 0.1 + managementAllowance;
     }
 }
+
+ /*
+           Part B
+         1. m.getName() will allow us to get the name
+         2. m.getSalary will get the salary
+         3. m.getManagementAllowance() will get the management allowance
+         4. m. calculateBonus will allow us to calc the bonus.
+         (All in the Manager class)
+
+           Part C
+         1. Employee will print first because without a parent class, child will not exist.
+          */
