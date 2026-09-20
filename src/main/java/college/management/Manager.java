@@ -6,11 +6,19 @@ import college.hr.Employee;
 
 public class Manager extends college.hr.Employee {
 
-    public Manager(double salary) {
-        super(salary);
+    private double managementAllowance;
+
+    public Manager(double salary, String name) {
+        super(salary, name);
     }
 
-    public void changeMySalary() {
-        salary = 100000;
+
+    public double getManagementAllowance() {
+        return managementAllowance;
+    }
+
+    @Override
+    protected double calculateBonus() {
+        return salary * 1.1 + managementAllowance;
     }
 }
