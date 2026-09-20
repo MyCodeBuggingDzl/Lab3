@@ -1,76 +1,4 @@
-package org.example;
-
-
-public class Employee {
-
-    private String name;
-    private double salary;
-
-    public Employee(String name, double salary) {
-        this.name = name;
-        this.salary = salary;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    protected void increaseSalary(double amount) {
-        // validate the amount
-        // modify salary only if valid
-        if (amount > 0) {
-            salary += amount;
-        }
-    }
-}
-
-
-
-
-class Manager extends Employee {
-
-    public Manager(String name, double salary) {
-        super(name, salary);
-    }
-
-    public void giveRaise() {
-        increaseSalary(1000);
-    }
-}
-
-
-class Animal {
-
-    private String name;
-
-    public Animal(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-}
-
-class Dog extends Animal {
-
-    public Dog(String name) {
-        super(name);
-    }
-
-    public void printName() {
-        System.out.println(getName());
-    }
-}
-
-
-
-
- /*
+/*
            Part B
          1. m.getName() will allow us to get the name
          2. m.getSalary will get the salary
@@ -98,4 +26,10 @@ class Dog extends Animal {
 
            Part G
          1.  A private can make it read only.
+
+           Part H
+         1. It inherits the salary field since it extends employee. The Object itself its being accessed.
+            Java lets a child in a another package only for its own instance.
+         2. The method is calling salary like another subclass. The object accessed is like an argument.
+            And the package are different so the test manager cant look.
          */
