@@ -13,6 +13,6 @@ public class TestManager extends Employee {
     }
 
     public void changeAnotherEmployee(Employee employee) {
-        employee.salary = 100000;
+        salary = 100000;
     }
 }

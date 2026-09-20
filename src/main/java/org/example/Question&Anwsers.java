@@ -32,4 +32,7 @@
             Java lets a child in a another package only for its own instance.
          2. The method is calling salary like another subclass. The object accessed is like an argument.
             And the package are different so the test manager cant look.
+
+           Part I
+         1. Since salary is protected any subclass can access it or any class in the same package.
          */
