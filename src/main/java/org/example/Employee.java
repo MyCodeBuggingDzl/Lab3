@@ -40,10 +40,6 @@ class Manager extends Employee {
     public void giveRaise() {
         increaseSalary(1000);
     }
-
-    public void breakSalary() {
-        salary = -500000;
-    }
 }
  /*
            Part B
@@ -65,7 +61,10 @@ class Manager extends Employee {
 
            Part E
          A. Because the subclass have control over it.
-         1. I would use protected to safely modify the data. It its much safer when there's
+         1. I would use protected to safely modify the data. It's much safer when there's
             a lot of child. It is way better if you want to raise the salary of a single employee.
 
-          */
+           Part F
+         1. To safely modify a data, design B safely modifies the data with a validation. And Design A can be invalid data.
+
+         */
