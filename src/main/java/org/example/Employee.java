@@ -41,6 +41,35 @@ class Manager extends Employee {
         increaseSalary(1000);
     }
 }
+
+
+class Animal {
+
+    private String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+class Dog extends Animal {
+
+    public Dog(String name) {
+        super(name);
+    }
+
+    public void printName() {
+        System.out.println(getName());
+    }
+}
+
+
+
+
  /*
            Part B
          1. m.getName() will allow us to get the name
@@ -67,4 +96,6 @@ class Manager extends Employee {
            Part F
          1. To safely modify a data, design B safely modifies the data with a validation. And Design A can be invalid data.
 
+           Part G
+         1.  A private can make it read only.
          */
