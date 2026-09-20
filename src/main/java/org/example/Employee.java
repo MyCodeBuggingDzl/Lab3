@@ -1,25 +1,30 @@
 package org.example;
 
 
-class Employee {
+public class Employee {
 
-    protected double salary;
+    private String name;
+    private double salary;
 
-    public Employee(double salary) {
+    public Employee(String name, double salary) {
+        this.name = name;
         this.salary = salary;
     }
 
-    static void main(String[] args) {
-        Manager manager = new Manager(80000);
+    public String getName() {
+        return name;
+    }
 
-        manager.giveRaise();
+    public double getSalary() {
+        return salary;
+    }
 
-        System.out.println(manager.salary);
-
-
-        manager.breakSalary();
-
-        System.out.println(manager.salary);
+    protected void increaseSalary(double amount) {
+        // validate the amount
+        // modify salary only if valid
+        if (amount > 0) {
+            salary += amount;
+        }
     }
 }
 
@@ -28,12 +33,12 @@ class Employee {
 
 class Manager extends Employee {
 
-    public Manager(double salary) {
-        super(salary);
+    public Manager(String name, double salary) {
+        super(name, salary);
     }
 
     public void giveRaise() {
-        salary += 1000;
+        increaseSalary(1000);
     }
 
     public void breakSalary() {
@@ -57,4 +62,10 @@ class Manager extends Employee {
          2. Yes, in here breakSalary gives a negative value.
          3. No, it's weaker, the parent class will be dependant to the child class.
          4. Yes,  a private, a protected will risk to have a invalid state.
+
+           Part E
+         A. Because the subclass have control over it.
+         1. I would use protected to safely modify the data. It its much safer when there's
+            a lot of child. It is way better if you want to raise the salary of a single employee.
+
           */
