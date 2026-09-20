@@ -1,87 +1,29 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
- class Employee {
 
-    private String name;
-    private double salary;
+class Employee {
 
+    protected double salary;
 
-    public static void main(String[] args) {
-
-
-    }
-
-
-    public Employee(String name, double salary) {
-        System.out.println("Employee Constructor");
-        this.name = name;
+    public Employee(double salary) {
         this.salary = salary;
     }
-
-
-    public String getName(){
-        return name;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public double calculateBonus() {
-        return salary * 0.05;
-    }
 }
 
+class Manager extends Employee {
 
-
-
- class Manager extends Employee {
-
-
-     private double managementAllowance;
-
-
-
-     public static void main(String[] args) {
-         Manager m = new Manager("John", 8000, 5000);
-         Manager m1 = new Manager("Amanda", 80000, 5000);
-
-
-         double mAllowance = m.managementAllowance;
-         System.out.println(mAllowance);
-
-         double bonus = m.calculateBonus();
-         System.out.println(bonus);
-
-         String name = m.getName();
-         System.out.println(name);
-
-         double salary = m.getSalary();
-         System.out.println(salary);
-
-
-     }
-
-
-    public Manager(String name, double salary, double managementAllowance){
-         super(name, salary);
-         System.out.println("Manager Constructor");
-        this.managementAllowance = managementAllowance;
+    public Manager(double salary) {
+        super(salary);
     }
 
-
-    public double getManagementAllowance() {
-        return managementAllowance;
+    public void giveRaise() {
+        salary += 1000;
     }
 
-    @Override
-    public double calculateBonus() {
-        return getSalary() * 0.1 + managementAllowance;
+    public void breakSalary() {
+        salary = -500000;
     }
 }
-
  /*
            Part B
          1. m.getName() will allow us to get the name
