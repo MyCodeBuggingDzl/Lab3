@@ -12,6 +12,11 @@ public class Manager extends college.hr.Employee {
         super(salary, name);
     }
 
+    public void giveRaise(double amount) {
+        if (amount > 0) {
+            this.salary += amount;
+        }
+}
 
     public double getManagementAllowance() {
         return managementAllowance;

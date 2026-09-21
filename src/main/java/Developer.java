@@ -17,4 +17,8 @@ public class Developer extends Employee {
     protected double calculateBonus() {
         return salary * 1.08;
     }
+
+    public String getProgLanguage() {
+        return progLanguage;
+    }
 }
